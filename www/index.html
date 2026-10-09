@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>MyCAD</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="tabs"></div>
+<div id="tools"></div>
+<canvas id="cv"></canvas>
+<div id="status"><span id="prompt">Tool chuno</span><span id="coords"></span></div>
+<div id="bottom">
+  <button id="bPoint" class="big">✓ Point</button>
+  <button id="bDone">Done</button>
+  <button id="bClose">Close</button>
+  <button id="bEsc">Esc</button>
+  <button id="bTouch">Touch: ON</button>
+  <select id="curLayer"></select>
+  <input id="cmd" type="text" placeholder="Command (L PL C TR M ...) | x,y | @dx,dy | len<angle | number" autocomplete="off" autocapitalize="characters">
+</div>
+<div id="layerPanel" hidden>
+  <div class="lp-head"><b>Layers</b><span><button id="lpAdd">+ New</button> <button id="lpClose">Close</button></span></div>
+  <div id="lpList"></div>
+</div>
+<div id="v3d" class="ov" hidden>
+  <div class="lp-head"><b>3D</b><span class="btnrow"><button id="v3Iso">Iso</button><button id="v3Front">Front</button><button id="v3Right">Right</button><button id="v3Top">Top</button><button id="v3Mode">Shaded</button><button id="v3Fit">Fit</button><button id="v3Stl">STL</button><button id="v3Close">Close</button></span></div>
+  <canvas id="cv3"></canvas><div id="v3Hint" class="hint"></div>
+</div>
+<div id="sheetPanel" class="ov" hidden>
+  <div class="lp-head"><b>Sheet Set</b><span class="btnrow"><button id="shAdd">+ Sheet</button><button id="shPub">Publish PDF</button><button id="shClose">Close</button></span></div>
+  <div id="shList"></div>
+</div>
+<div id="layoutView" class="ov" hidden>
+  <div class="lp-head"><b id="lyTitle">Layout</b><span class="btnrow"><button id="lyNew">+ Viewport</button><button id="lyPan">Pan</button><button id="lyScale">Scale</button><button id="lyFit">Fit</button><button id="lyLayers">Layers</button><button id="lyDel">Delete</button><button id="lyClose">Close</button></span></div>
+  <canvas id="lyCv"></canvas><div id="lyHint" class="hint"></div>
+</div>
+<div id="propPanel" hidden>
+  <div class="lp-head"><b>Properties</b><span><button id="ppApply">Apply</button> <button id="ppClose">Close</button></span></div>
+  <div id="ppList"></div>
+</div>
+<input id="file" type="file" accept=".dxf" hidden>
+<input id="file2" type="file" accept=".dxf" hidden>
+<script src="geom.js"></script>
+<script src="solid3d.js"></script>
+<script src="io.js"></script>
+<script src="cons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
